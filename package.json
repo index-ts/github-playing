@@ -1,0 +1,30 @@
+{
+  "name": "listening",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "tasks": "./node_modules/.bin/gulp",
+    "build": "./node_modules/.bin/webpack --config webpack.config.js & npm run tasks",
+    "clean": "rm -rf dist",
+    "prebuild": "npm run clean"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/chrome": "0.0.120",
+    "@types/gulp": "^4.0.6",
+    "awesome-typescript-loader": "^5.2.1",
+    "gulp": "^4.0.2",
+    "ts-loader": "^8.0.1",
+    "ts-node": "^8.10.2",
+    "typescript": "^3.9.7",
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.12"
+  },
+  "dependencies": {
+    "prompt": "^1.0.0",
+    "rxjs": "^6.6.0"
+  }
+}
