@@ -1,5 +1,4 @@
 console.log('Bootstrapping.');
-import * as fs from 'fs';
 
 interface Music {
   name: string;
@@ -53,10 +52,12 @@ const specify = () => {
   });
 }
 
-const credentials = JSON.parse(fs.readFileSync('credentials.json', 'utf8'));
-const updateProfile = (music: Music) => {
-  const id = credentials.id;
-  const oauth = credentials.oauth;
+const updateProfile = async (music: Music) => {
+  const credentials = await (await fetch('credentials.json')).json();
+  console.log(credentials);
+
+  const id = credentials['id'];
+  const oauth = credentials['key'];
   const message = `now i'my playing ${music.name}`;
   const auth = `token ${oauth}`;
 

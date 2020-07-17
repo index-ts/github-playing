@@ -3,7 +3,6 @@ const path = require('path');
 const { join } = require('path');
 
 module.exports = {
-    target: "node",
     entry: {
         background: join(__dirname, 'src/background.ts'),
     },
