@@ -1,4 +1,5 @@
 console.log('Bootstrapping.');
+import * as fs from 'fs';
 
 interface Music {
   name: string;
@@ -36,8 +37,6 @@ const specify = () => {
           const albumCoverImgOriginal = new RegExp('(.*)=.*').exec(albumCoverImgSrc)[1];
           const url = res[3];
 
-          console.log('name', name);
-
           updateProfile({
             name,
             artists,
@@ -54,11 +53,15 @@ const specify = () => {
   });
 }
 
+const credentials = JSON.parse(fs.readFileSync('credentials.json', 'utf8'));
 const updateProfile = (music: Music) => {
-  const id = "webhacking";
-  const oauth = "384afe87dd727c82504b1837c23ac06e4501ab08";
+  const id = credentials.id;
+  const oauth = credentials.oauth;
   const message = `now i'my playing ${music.name}`;
   const auth = `token ${oauth}`;
+
+  console.log('id', id);
+
   fetch(`https://api.github.com/repos/${id}/${id}/contents/README.template.md`, {
     headers: {
       "Authorization": auth

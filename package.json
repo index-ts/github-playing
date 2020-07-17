@@ -7,6 +7,7 @@
     "tasks": "./node_modules/.bin/gulp",
     "build": "./node_modules/.bin/webpack --config webpack.config.js & npm run tasks",
     "clean": "rm -rf dist",
+    "init": "./node_modules/.bin/ts-node main.ts",
     "prebuild": "npm run clean"
   },
   "keywords": [],
@@ -15,6 +16,7 @@
   "devDependencies": {
     "@types/chrome": "0.0.120",
     "@types/gulp": "^4.0.6",
+    "@types/node": "^14.0.23",
     "awesome-typescript-loader": "^5.2.1",
     "gulp": "^4.0.2",
     "ts-loader": "^8.0.1",
@@ -24,7 +26,6 @@
     "webpack-cli": "^3.3.12"
   },
   "dependencies": {
-    "prompt": "^1.0.0",
-    "rxjs": "^6.6.0"
+    "prompts": "^2.3.2"
   }
 }

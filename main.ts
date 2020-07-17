@@ -1,7 +1,8 @@
-import prompt from 'prompt';
+import * as prompts from 'prompts';
+import * as fs from 'fs';
 
 (async () => {
-  const {id, key} = await prompt([
+  const {id, key} = await prompts([
     {
       type: 'text',
       name: 'id',
@@ -14,5 +15,5 @@ import prompt from 'prompt';
     }
   ]);
 
-  console.log(id, key)
+  fs.writeFileSync('credentials.json', JSON.stringify({id, key}), 'utf8')
 })()

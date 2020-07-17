@@ -9,6 +9,12 @@ Copy `README.template.md` file to your id repository (E.g. github.com/{yourid}/$
 # How to use
 
 First of all. clone this repository.
+
+And initialize
+
+```
+npm run init
+```
 And install all of dependencies
 
 ```
