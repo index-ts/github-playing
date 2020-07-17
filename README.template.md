@@ -1,0 +1,9 @@
+## Now I'm listening {CURRENT_PLAYING_NAME} 🎵🎵
+
+[<img align="left" width="100" src="{CURRENT_PLAYING_ALBUM_SRC}">]({CURRENT_PLAYING_URL})
+
+{CURRENT_PLAYING_ARTISTS}
+
+**Albums**: {CURRENT_PLAYING_ALBUM}
+
+Last updated at {CURRENT_PLAYING_LAST_UPDATED}
